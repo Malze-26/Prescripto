@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react'
 import { assets } from '../../assets/assets/assets_admin/assets'
 import { AdminContext } from '../../context/AdminContext'
+import { toast } from 'react-toastify'
+import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
 const AddDoctor = () => {
@@ -16,30 +18,51 @@ const AddDoctor = () => {
   const [address1, setAddress1] = useState('')
   const [address2, setAddress2] = useState('')
 
-  const { addDoctor } = useContext(AdminContext)
+  const { backendUrl, aToken } = useContext(AdminContext)
   const navigate = useNavigate()
 
   const onSubmitHandler = async (e) => {
     e.preventDefault()
 
-    const newDoctor = {
-      name,
-      email,
-      password,
-      experience,
-      fees: Number(fees),
-      about,
-      speciality,
-      degree,
-      address: {
-        line1: address1,
-        line2: address2
-      },
-      image: docImg ? URL.createObjectURL(docImg) : assets.doctor_icon
-    }
+    try {
+      if (!docImg) {
+        return toast.error('Image Not Selected')
+      }
 
-    addDoctor(newDoctor)
-    navigate('/doctor-list')
+      const formData = new FormData()
+      formData.append('image', docImg)
+      formData.append('name', name)
+      formData.append('email', email)
+      formData.append('password', password)
+      formData.append('experience', experience)
+      formData.append('fees', Number(fees))
+      formData.append('about', about)
+      formData.append('speciality', speciality)
+      formData.append('degree', degree)
+      formData.append('address', JSON.stringify({ line1: address1, line2: address2 }))
+
+      const { data } = await axios.post(backendUrl + '/api/admin/add-doctor', formData, {
+        headers: { aToken }
+      })
+
+      if (data.success) {
+        toast.success(data.message)
+        setDocImg(false)
+        setName('')
+        setPassword('')
+        setEmail('')
+        setAddress1('')
+        setAddress2('')
+        setDegree('')
+        setAbout('')
+        setFees('')
+        navigate('/doctor-list')
+      } else {
+        toast.error(data.message)
+      }
+    } catch (error) {
+      toast.error(error.message)
+    }
   }
 
   return (

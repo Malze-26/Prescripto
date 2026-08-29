@@ -1,138 +1,95 @@
 import React, { createContext, useState } from 'react'
-import { doctors as initialDoctors } from '../assets/assets/assets_frontend/assets'
-import { assets } from '../assets/assets/assets_admin/assets'
+import axios from 'axios'
+import { toast } from 'react-toastify'
 
 export const AdminContext = createContext()
 
 const AdminContextProvider = (props) => {
-  const [aToken, setAToken] = useState(localStorage.getItem('aToken') || 'admin-demo-token')
-  const [doctors, setDoctors] = useState(initialDoctors.map(doc => ({ ...doc, available: true })))
+  const [aToken, setAToken] = useState(localStorage.getItem('aToken') || '')
+  const [doctors, setDoctors] = useState([])
+  const [appointments, setAppointments] = useState([])
+  const [dashData, setDashData] = useState(false)
 
-  const initialAppointments = [
-    {
-      _id: 'app1',
-      userData: {
-        name: 'Richard James',
-        image: assets.people_icon || initialDoctors[0].image,
-        dob: '1998-05-12'
-      },
-      docData: initialDoctors[0],
-      slotDate: '26_08_2026',
-      slotTime: '10:00 AM',
-      amount: initialDoctors[0].fees,
-      cancelled: false,
-      isCompleted: false
-    },
-    {
-      _id: 'app2',
-      userData: {
-        name: 'Alison Jenkins',
-        image: initialDoctors[1].image,
-        dob: '2001-08-20'
-      },
-      docData: initialDoctors[1],
-      slotDate: '26_08_2026',
-      slotTime: '11:30 AM',
-      amount: initialDoctors[1].fees,
-      cancelled: false,
-      isCompleted: false
-    },
-    {
-      _id: 'app3',
-      userData: {
-        name: 'Jennifer Garcia',
-        image: initialDoctors[2].image,
-        dob: '1995-11-04'
-      },
-      docData: initialDoctors[2],
-      slotDate: '27_08_2026',
-      slotTime: '02:00 PM',
-      amount: initialDoctors[2].fees,
-      cancelled: false,
-      isCompleted: false
-    },
-    {
-      _id: 'app4',
-      userData: {
-        name: 'Christopher Martinez',
-        image: initialDoctors[3].image,
-        dob: '1990-03-15'
-      },
-      docData: initialDoctors[3],
-      slotDate: '28_08_2026',
-      slotTime: '04:30 PM',
-      amount: initialDoctors[3].fees,
-      cancelled: true,
-      isCompleted: false
-    },
-    {
-      _id: 'app5',
-      userData: {
-        name: 'Emily Larson',
-        image: initialDoctors[4].image,
-        dob: '2003-09-22'
-      },
-      docData: initialDoctors[4],
-      slotDate: '29_08_2026',
-      slotTime: '09:00 AM',
-      amount: initialDoctors[4].fees,
-      cancelled: false,
-      isCompleted: true
+  const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:4000'
+
+  // Getting all doctors data from Database using API
+  const getAllDoctors = async () => {
+    try {
+      const { data } = await axios.post(backendUrl + '/api/admin/all-doctors', {}, { headers: { aToken } })
+      if (data.success) {
+        setDoctors(data.doctors)
+      } else {
+        toast.error(data.message)
+      }
+    } catch (error) {
+      toast.error(error.message)
     }
-  ]
-
-  const [appointments, setAppointments] = useState(initialAppointments)
-
-  const [dashData, setDashData] = useState({
-    doctors: doctors.length,
-    appointments: appointments.length,
-    patients: 5,
-    latestAppointments: appointments.slice(0, 5)
-  })
-
-  const changeAvailability = (docId) => {
-    setDoctors(prev =>
-      prev.map(doc => (doc._id === docId ? { ...doc, available: !doc.available } : doc))
-    )
   }
 
-  const cancelAppointment = (appointmentId) => {
-    setAppointments(prev =>
-      prev.map(item => (item._id === appointmentId ? { ...item, cancelled: true } : item))
-    )
-  }
-
-  const addDoctor = (newDoc) => {
-    const docWithId = {
-      ...newDoc,
-      _id: `doc_${Date.now()}`,
-      available: true
+  // Function to change doctor availability using API
+  const changeAvailability = async (docId) => {
+    try {
+      const { data } = await axios.post(backendUrl + '/api/admin/change-availability', { docId }, { headers: { aToken } })
+      if (data.success) {
+        toast.success(data.message)
+        getAllDoctors()
+      } else {
+        toast.error(data.message)
+      }
+    } catch (error) {
+      toast.error(error.message)
     }
-    setDoctors(prev => [docWithId, ...prev])
   }
 
-  const getAllDoctors = () => {
-    return doctors
+  // Getting all appointments data from Database using API
+  const getAllAppointments = async () => {
+    try {
+      const { data } = await axios.get(backendUrl + '/api/admin/appointments', { headers: { aToken } })
+      if (data.success) {
+        setAppointments(data.appointments)
+      } else {
+        toast.error(data.message)
+      }
+    } catch (error) {
+      toast.error(error.message)
+    }
   }
 
-  const getAllAppointments = () => {
-    return appointments
+  // Function to cancel appointment from Admin panel using API
+  const cancelAppointment = async (appointmentId) => {
+    try {
+      const { data } = await axios.post(backendUrl + '/api/admin/cancel-appointment', { appointmentId }, { headers: { aToken } })
+      if (data.success) {
+        toast.success(data.message)
+        getAllAppointments()
+        getDashData()
+      } else {
+        toast.error(data.message)
+      }
+    } catch (error) {
+      toast.error(error.message)
+    }
   }
 
-  const getDashData = () => {
-    setDashData({
-      doctors: doctors.length,
-      appointments: appointments.length,
-      patients: 5,
-      latestAppointments: appointments.slice(0, 5)
-    })
+  // Getting Admin dashboard data from Database using API
+  const getDashData = async () => {
+    try {
+      const { data } = await axios.get(backendUrl + '/api/admin/dashboard', { headers: { aToken } })
+      if (data.success) {
+        setDashData(data.dashData)
+      } else {
+        toast.error(data.message)
+      }
+    } catch (error) {
+      toast.error(error.message)
+    }
   }
 
   const value = {
     aToken,
     setAToken,
+    backendUrl,
     doctors,
-    setDoctors,
     getAllDoctors,
     changeAvailability,
     appointments,
@@ -140,8 +97,7 @@ const AdminContextProvider = (props) => {
     getAllAppointments,
     cancelAppointment,
     dashData,
-    getDashData,
-    addDoctor
+    getDashData
   }
 
   return (
