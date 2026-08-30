@@ -1,5 +1,6 @@
 import validator from "validator";
 import bcrypt from "bcrypt";
+import fs from "node:fs";
 import { v2 as cloudinary } from "cloudinary";
 import doctorModel from "../models/doctorModel.js";
 import jwt from "jsonwebtoken";
@@ -8,9 +9,9 @@ import userModel from "../models/userModel.js";
 
 // API for adding doctor
 const addDoctor = async (req, res) => {
+    const imageFile = req.file;
     try {
         const { name, email, password, speciality, degree, experience, about, fees, address } = req.body;
-        const imageFile = req.file;
 
         // checking for all data to add doctor
         if (!name || !email || !password || !speciality || !degree || !experience || !about || !fees || !address) {
@@ -31,12 +32,21 @@ const addDoctor = async (req, res) => {
             return res.json({ success: false, message: "Doctor image is required" });
         }
 
+        // check if doctor email already exists
+        const existingDoc = await doctorModel.findOne({ email });
+        if (existingDoc) {
+            return res.json({ success: false, message: "A doctor with this email already exists" });
+        }
+
         // hashing doctor password
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
 
         // upload image to cloudinary
-        const imageUpload = await cloudinary.uploader.upload(imageFile.path, { resource_type: "image" });
+        const imageUpload = await cloudinary.uploader.upload(imageFile.path, { 
+            folder: 'prescripto_doctors',
+            resource_type: "image" 
+        });
         const imageUrl = imageUpload.secure_url;
 
         let parsedAddress = address;
@@ -70,6 +80,12 @@ const addDoctor = async (req, res) => {
     } catch (error) {
         console.error(error);
         res.json({ success: false, message: error.message });
+    } finally {
+        if (imageFile && imageFile.path && fs.existsSync(imageFile.path)) {
+            fs.unlink(imageFile.path, (err) => {
+                if (err) console.error("Failed to delete temp upload file:", err);
+            });
+        }
     }
 }
 
@@ -79,7 +95,7 @@ const loginAdmin = async (req, res) => {
         const { email, password } = req.body;
 
         if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
-            const token = jwt.sign(email + password, process.env.JWT_SECRET);
+            const token = jwt.sign({ email, role: 'admin' }, process.env.JWT_SECRET, { expiresIn: '7d' });
             res.json({ success: true, token });
         } else {
             res.json({ success: false, message: "Invalid credentials" });
@@ -119,16 +135,19 @@ const appointmentCancel = async (req, res) => {
         const { appointmentId } = req.body;
         const appointmentData = await appointmentModel.findById(appointmentId);
 
+        if (!appointmentData) {
+            return res.json({ success: false, message: 'Appointment not found' });
+        }
+
         await appointmentModel.findByIdAndUpdate(appointmentId, { cancelled: true });
 
-        // releasing doctor slot
+        // releasing doctor slot atomically
         const { docId, slotDate, slotTime } = appointmentData;
-        const doctorData = await doctorModel.findById(docId);
+        const slotKey = `slots_booked.${slotDate}`;
 
-        let slots_booked = doctorData.slots_booked;
-        slots_booked[slotDate] = slots_booked[slotDate].filter(e => e !== slotTime);
-
-        await doctorModel.findByIdAndUpdate(docId, { slots_booked });
+        await doctorModel.findByIdAndUpdate(docId, {
+            $pull: { [slotKey]: slotTime }
+        });
 
         res.json({ success: true, message: 'Appointment Cancelled' });
 
