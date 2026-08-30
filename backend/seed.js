@@ -32,7 +32,9 @@ const sriLankanDoctors = [
         speciality: 'General physician',
         degree: 'MBBS (Colombo), MD (Medicine)',
         experience: '8 Years',
-        about: 'Dr. Kasun Bandara is a senior consultant physician with extensive clinical experience at the National Hospital of Sri Lanka. He specializes in comprehensive adult medical care, chronic disease management, and preventive wellness.',
+        hospital: 'Asiri Central Hospital',
+        district: 'Colombo',
+        about: 'Dr. Kasun Bandara is a senior consultant physician with extensive clinical experience at the National Hospital of Sri Lanka and Asiri Central Hospital. He specializes in comprehensive adult medical care, chronic disease management, and preventive wellness.',
         fees: 3000,
         address: {
             line1: 'No. 45, Ward Place',
@@ -46,7 +48,9 @@ const sriLankanDoctors = [
         speciality: 'Gynecologist',
         degree: 'MBBS (Peradeniya), MS (Obs & Gyn)',
         experience: '12 Years',
-        about: 'Dr. Chamari Wickramasinghe is a respected consultant obstetrician and gynecologist serving at Teaching Hospital Peradeniya. She is dedicated to women’s health, maternal-fetal wellness, and minimally invasive surgery.',
+        hospital: 'Asiri Hospital Kandy',
+        district: 'Kandy',
+        about: 'Dr. Chamari Wickramasinghe is a respected consultant obstetrician and gynecologist serving at Teaching Hospital Peradeniya and Asiri Hospital Kandy. She is dedicated to women’s health, maternal-fetal wellness, and minimally invasive surgery.',
         fees: 4500,
         address: {
             line1: 'No. 120, Peradeniya Road',
@@ -60,7 +64,9 @@ const sriLankanDoctors = [
         speciality: 'Dermatologist',
         degree: 'MBBS (Sri Jayewardenepura), MD (Dermatology)',
         experience: '7 Years',
-        about: 'Dr. Dilani Senanayake specializes in clinical and cosmetic dermatology, offering advanced treatments for chronic skin conditions, acne management, and pediatric dermatological care in Colombo.',
+        hospital: 'Durdans Hospital',
+        district: 'Colombo',
+        about: 'Dr. Dilani Senanayake specializes in clinical and cosmetic dermatology, offering advanced treatments for chronic skin conditions, acne management, and pediatric dermatological care at Durdans Hospital Colombo.',
         fees: 3500,
         address: {
             line1: 'No. 88, Havelock Road',
@@ -74,7 +80,9 @@ const sriLankanDoctors = [
         speciality: 'Pediatricians',
         degree: 'MBBS (Kelaniya), DCH, MD (Paediatrics)',
         experience: '10 Years',
-        about: 'Dr. Nuwan Jayawardena is a compassionate consultant pediatrician with over a decade of dedication to neonatal health, childhood development, vaccination programs, and adolescent medicine.',
+        hospital: 'Neville Fernando Teaching Hospital',
+        district: 'Colombo',
+        about: 'Dr. Nuwan Jayawardena is a compassionate consultant pediatrician with over a decade of dedication to neonatal health, childhood development, vaccination programs, and adolescent medicine in Malabe.',
         fees: 3000,
         address: {
             line1: 'No. 14, Kandy Road',
@@ -88,7 +96,9 @@ const sriLankanDoctors = [
         speciality: 'Neurologist',
         degree: 'MBBS (Colombo), MD (Neurology), MRCP (UK)',
         experience: '15 Years',
-        about: 'Dr. Rohan Jayasuriya is a senior consultant neurologist known for his expertise in stroke rehabilitation, epilepsy management, neurodegenerative disorders, and neuromuscular diagnostics.',
+        hospital: 'Lanka Hospitals',
+        district: 'Colombo',
+        about: 'Dr. Rohan Jayasuriya is a senior consultant neurologist practicing at Lanka Hospitals, known for his expertise in stroke rehabilitation, epilepsy management, and neuromuscular diagnostics.',
         fees: 5000,
         address: {
             line1: 'No. 210, Baseline Road',
@@ -102,7 +112,9 @@ const sriLankanDoctors = [
         speciality: 'Gastroenterologist',
         degree: 'MBBS (Ruhuna), MD (Gastroenterology)',
         experience: '9 Years',
-        about: 'Dr. Anusha Fernando is a leading consultant gastroenterologist and hepatologist practicing in the Southern Province, specializing in endoscopy, liver health, and digestive tract disorders.',
+        hospital: 'Ruhunu Hospital',
+        district: 'Galle',
+        about: 'Dr. Anusha Fernando is a leading consultant gastroenterologist and hepatologist practicing at Ruhunu Hospital Galle, specializing in endoscopy, liver health, and digestive tract disorders.',
         fees: 4000,
         address: {
             line1: 'No. 32, Hospital Road',
@@ -116,7 +128,9 @@ const sriLankanDoctors = [
         speciality: 'General physician',
         degree: 'MBBS (Colombo), MCGP (SL)',
         experience: '6 Years',
-        about: 'Dr. Thisara Gunaratne is an experienced primary care physician dedicated to providing family medical consultations, health screenings, lifestyle disease management, and emergency primary care.',
+        hospital: 'Nawaloka Medicare Negombo',
+        district: 'Gampaha',
+        about: 'Dr. Thisara Gunaratne is an experienced primary care physician in Negombo providing family medical consultations, health screenings, lifestyle disease management, and emergency primary care.',
         fees: 2500,
         address: {
             line1: 'No. 76, Main Street',
@@ -130,7 +144,9 @@ const sriLankanDoctors = [
         speciality: 'Gynecologist',
         degree: 'MBBS (Peradeniya), MRCOG (UK)',
         experience: '11 Years',
-        about: 'Dr. Menaka Samaraweera is a consultant gynecologist with dual training in Sri Lanka and the United Kingdom, focusing on fertility diagnostics, prenatal wellness, and reproductive endocrinology.',
+        hospital: 'Suwasevana Hospital',
+        district: 'Kandy',
+        about: 'Dr. Menaka Samaraweera is a consultant gynecologist practicing at Suwasevana Hospital Kandy, focusing on fertility diagnostics, prenatal wellness, and reproductive endocrinology.',
         fees: 4500,
         address: {
             line1: 'No. 55, Kurunegala Road',
@@ -144,7 +160,9 @@ const sriLankanDoctors = [
         speciality: 'Dermatologist',
         degree: 'MBBS (Colombo), Dip. in Dermatology',
         experience: '5 Years',
-        about: 'Dr. Sachini Alwis delivers holistic dermatological care, focusing on allergic skin diseases, hair and scalp wellness, laser procedures, and evidence-based skincare therapies.',
+        hospital: 'Kings Hospital',
+        district: 'Colombo',
+        about: 'Dr. Sachini Alwis delivers holistic dermatological care at Kings Hospital Colombo, focusing on allergic skin diseases, laser procedures, and evidence-based skincare therapies.',
         fees: 3200,
         address: {
             line1: 'No. 112, Galle Road',
@@ -158,7 +176,9 @@ const sriLankanDoctors = [
         speciality: 'Pediatricians',
         degree: 'MBBS (Ruhuna), MD (Paediatrics)',
         experience: '8 Years',
-        about: 'Dr. Kusal Mendis is an attentive pediatrician committed to holistic child health, early developmental screening, asthma care, and childhood nutrition counseling.',
+        hospital: 'Cooperative Hospital Galle',
+        district: 'Galle',
+        about: 'Dr. Kusal Mendis is an attentive pediatrician at Cooperative Hospital Galle committed to child health, early developmental screening, asthma care, and nutrition counseling.',
         fees: 3000,
         address: {
             line1: 'No. 68, Wakwella Road',
@@ -172,7 +192,9 @@ const sriLankanDoctors = [
         speciality: 'Neurologist',
         degree: 'MBBS (Peradeniya), MD, FRCP (London)',
         experience: '18 Years',
-        about: 'Dr. Priyantha Dissanayake is one of the most senior neurologists in Sri Lanka, offering specialist consultations for migraine, Parkinson’s disease, peripheral neuropathy, and memory disorders.',
+        hospital: 'Kandy Private Hospital',
+        district: 'Kandy',
+        about: 'Dr. Priyantha Dissanayake is a senior consultant neurologist in Kandy offering specialist consultations for migraine, Parkinson’s disease, and neurodegenerative conditions.',
         fees: 5500,
         address: {
             line1: 'No. 95, William Gopallawa Mawatha',
@@ -186,7 +208,9 @@ const sriLankanDoctors = [
         speciality: 'Gastroenterologist',
         degree: 'MBBS (Sri Jayewardenepura), MD, MRCP',
         experience: '10 Years',
-        about: 'Dr. Asanka Weerakkody is a senior consultant in digestive diseases and therapeutic endoscopy, committed to high-standard patient care and clinical excellence.',
+        hospital: 'Nawaloka Hospital',
+        district: 'Colombo',
+        about: 'Dr. Asanka Weerakkody is a senior consultant in digestive diseases and therapeutic endoscopy at Nawaloka Hospital, committed to clinical excellence and compassionate patient care.',
         fees: 4200,
         address: {
             line1: 'No. 204, High Level Road',
@@ -200,7 +224,9 @@ const sriLankanDoctors = [
         speciality: 'General physician',
         degree: 'MBBS (Jaffna), Dip. Family Medicine',
         experience: '4 Years',
-        about: 'Dr. Tharindu Rathnayake provides comprehensive outpatient consultations, routine wellness checkups, cardiovascular risk assessments, and personalized healthcare plans.',
+        hospital: 'Miracle Hospital Kurunegala',
+        district: 'Kurunegala',
+        about: 'Dr. Tharindu Rathnayake provides comprehensive outpatient consultations, routine wellness checkups, cardiovascular risk assessments, and family health plans in Kurunegala.',
         fees: 2500,
         address: {
             line1: 'No. 18, Colombo Road',
@@ -214,7 +240,9 @@ const sriLankanDoctors = [
         speciality: 'Gynecologist',
         degree: 'MBBS (Colombo), MS (Obs & Gyn)',
         experience: '9 Years',
-        about: 'Dr. Oshadi Kulatunga is a dedicated consultant obstetrician and gynecologist with special interests in high-risk pregnancies, adolescent gynecology, and laparoscopic procedures.',
+        hospital: 'Ninewells Hospital',
+        district: 'Colombo',
+        about: 'Dr. Oshadi Kulatunga is a dedicated consultant obstetrician and gynecologist at Ninewells Hospital with special interests in maternity care, fertility, and laparoscopic procedures.',
         fees: 4000,
         address: {
             line1: 'No. 72, Nawala Road',
@@ -228,7 +256,9 @@ const sriLankanDoctors = [
         speciality: 'Pediatricians',
         degree: 'MBBS (Colombo), DCH, MRCPCH (UK)',
         experience: '13 Years',
-        about: 'Dr. Chathura Abeysekara is a senior consultant pediatrician with extensive clinical expertise across major Sri Lankan pediatric hospitals and specialized pediatric care centers.',
+        hospital: 'Lady Ridgeway Private Wing',
+        district: 'Colombo',
+        about: 'Dr. Chathura Abeysekara is a senior consultant pediatrician with extensive clinical expertise across major pediatric intensive care and developmental health centers in Colombo.',
         fees: 3800,
         address: {
             line1: 'No. 150, Cotta Road',
@@ -258,7 +288,7 @@ const seedDatabase = async () => {
 
         const frontendAssetsDir = path.resolve(__dirname, '../frontend/src/assets/assets/assets_frontend')
 
-        console.log('Seeding 15 Sri Lankan doctors...')
+        console.log('Seeding 15 Sri Lankan doctors with hospitals & districts...')
         const doctorDocuments = []
 
         for (const doc of sriLankanDoctors) {
@@ -289,6 +319,8 @@ const seedDatabase = async () => {
                 speciality: doc.speciality,
                 degree: doc.degree,
                 experience: doc.experience,
+                hospital: doc.hospital,
+                district: doc.district,
                 about: doc.about,
                 available: true,
                 fees: doc.fees,

@@ -12,6 +12,8 @@ const doctorSchema = new mongoose.Schema({
     available: { type: Boolean, default: true },
     fees: { type: Number, required: true },
     address: { type: Object, required: true },
+    hospital: { type: String, default: 'General Hospital' },
+    district: { type: String, default: 'Colombo' },
     date: { type: Number, required: true },
     slots_booked: { type: Object, default: {} }
 }, { minimize: false })

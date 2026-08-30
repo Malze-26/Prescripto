@@ -6,7 +6,10 @@ import {
     updateProfile,
     bookAppointment,
     listAppointment,
-    cancelAppointment
+    cancelAppointment,
+    paymentPayhere,
+    payhereNotify,
+    verifyPayhere
 } from '../controllers/userController.js';
 import authUser from '../middlewares/authUser.js';
 import upload from '../middlewares/multer.js';
@@ -20,5 +23,8 @@ userRouter.post('/update-profile', upload.single('image'), authUser, updateProfi
 userRouter.post('/book-appointment', authUser, bookAppointment);
 userRouter.get('/appointments', authUser, listAppointment);
 userRouter.post('/cancel-appointment', authUser, cancelAppointment);
+userRouter.post('/payment-payhere', authUser, paymentPayhere);
+userRouter.post('/payhere-notify', payhereNotify);
+userRouter.post('/verify-payhere', authUser, verifyPayhere);
 
 export default userRouter;

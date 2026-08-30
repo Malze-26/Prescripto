@@ -136,10 +136,22 @@ const Appointments = () => {
             {docInfo.name}
             <img className='w-5' src={assets.verified_icon} alt="verified" />
           </p>
-          <div className='flex items-center gap-2 text-sm mt-1 text-gray-600'>
+          <div className='flex items-center gap-2 text-sm mt-1 text-gray-600 flex-wrap'>
             <p>{docInfo.degree} - {docInfo.speciality}</p>
             <button className='py-0.5 px-2 border text-xs rounded-full'>{docInfo.experience}</button>
+            {docInfo.district && (
+              <span className='py-0.5 px-2.5 bg-blue-50 text-blue-700 text-xs rounded-full font-medium'>
+                📍 {docInfo.district}
+              </span>
+            )}
           </div>
+
+          {docInfo.hospital && (
+            <p className='text-sm text-gray-700 font-medium mt-2.5 flex items-center gap-1.5'>
+              <span>🏥 Hospital / Clinic:</span>
+              <span className='text-primary'>{docInfo.hospital}</span>
+            </p>
+          )}
 
           {/* ----- Doctor About ----- */}
           <div>
@@ -149,7 +161,7 @@ const Appointments = () => {
             <p className='text-sm text-gray-500 max-w-[700px] mt-1'>{docInfo.about}</p>
           </div>
           <p className='text-gray-500 font-medium mt-4'>
-            Appointment fee: <span className='text-gray-800'>{currencySymbol}{docInfo.fees}</span>
+            Appointment fee: <span className='text-gray-800 font-semibold'>{currencySymbol}{docInfo.fees}</span>
           </p>
         </div>
       </div>

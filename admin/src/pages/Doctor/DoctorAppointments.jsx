@@ -19,8 +19,8 @@ const DoctorAppointments = () => {
 
       <div className='bg-white border border-gray-200 rounded text-sm max-h-[80vh] min-h-[50vh] overflow-y-scroll shadow-sm'>
         {/* Table Header */}
-        <div className='max-sm:hidden grid grid-cols-[0.5fr_2fr_1fr_1fr_3fr_1fr_1fr] gap-1 py-3.5 px-6 border-b border-gray-200 bg-gray-50 text-gray-600 font-medium'>
-          <p>#</p>
+        <div className='max-sm:hidden grid grid-cols-[0.8fr_2fr_1fr_1fr_2.7fr_1fr_1fr] gap-1 py-3.5 px-6 border-b border-gray-200 bg-gray-50 text-gray-600 font-medium'>
+          <p>Token #</p>
           <p>Patient</p>
           <p>Payment</p>
           <p>Age</p>
@@ -32,10 +32,14 @@ const DoctorAppointments = () => {
         {/* Table Rows */}
         {appointments.map((item, index) => (
           <div
-            className='flex flex-wrap justify-between max-sm:gap-5 max-sm:text-base sm:grid grid-cols-[0.5fr_2fr_1fr_1fr_3fr_1fr_1fr] gap-1 items-center text-gray-500 py-3 px-6 border-b border-gray-100 hover:bg-gray-50 transition-colors'
+            className='flex flex-wrap justify-between max-sm:gap-5 max-sm:text-base sm:grid grid-cols-[0.8fr_2fr_1fr_1fr_2.7fr_1fr_1fr] gap-1 items-center text-gray-500 py-3 px-6 border-b border-gray-100 hover:bg-gray-50 transition-colors'
             key={index}
           >
-            <p className='max-sm:hidden'>{index + 1}</p>
+            <div className='max-sm:hidden'>
+              <span className='px-2.5 py-1 bg-indigo-50 text-indigo-700 font-bold text-xs rounded-full'>
+                #{item.tokenNumber || index + 1}
+              </span>
+            </div>
 
             <div className='flex items-center gap-2'>
               <img className='w-8 h-8 rounded-full object-cover bg-gray-200' src={item.userData.image} alt={item.userData.name} />
