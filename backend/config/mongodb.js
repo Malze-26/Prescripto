@@ -10,8 +10,15 @@ try {
 
 const connectDB = async () => {
     try {
-        mongoose.connection.on('connected', () => console.log("Database Connected"));
-        await mongoose.connect(`${process.env.MONGODB_URI}/prescripto`);
+        const dbName = process.env.MONGODB_DB_NAME || 'prescripto';
+        mongoose.connection.on('connected', () => console.log("Database Connected to", dbName));
+        
+        // Strip trailing slash if present on MONGODB_URI
+        const baseUri = process.env.MONGODB_URI.endsWith('/') 
+            ? process.env.MONGODB_URI.slice(0, -1) 
+            : process.env.MONGODB_URI;
+
+        await mongoose.connect(`${baseUri}/${dbName}`);
     } catch (error) {
         console.error("MongoDB Connection Failed:", error.message);
     }

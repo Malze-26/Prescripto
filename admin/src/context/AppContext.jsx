@@ -3,7 +3,7 @@ import React, { createContext } from 'react'
 export const AppContext = createContext()
 
 const AppContextProvider = (props) => {
-  const currency = '$'
+  const currency = import.meta.env.VITE_CURRENCY_SYMBOL || 'LKR '
 
   const calculateAge = (dob) => {
     const today = new Date()

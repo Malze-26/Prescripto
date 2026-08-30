@@ -88,212 +88,212 @@ export const specialityData = [
 export const doctors = [
     {
         _id: 'doc1',
-        name: 'Dr. Richard James',
+        name: 'Dr. Kasun Bandara',
         image: doc1,
         speciality: 'General physician',
-        degree: 'MBBS',
-        experience: '4 Years',
-        about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 50,
+        degree: 'MBBS (Colombo), MD (Medicine)',
+        experience: '8 Years',
+        about: 'Dr. Kasun Bandara is a senior consultant physician specializing in comprehensive adult medical care, chronic disease management, and preventive wellness.',
+        fees: 3000,
         address: {
-            line1: '17th Cross, Richmond',
-            line2: 'Circle, Ring Road, London'
+            line1: 'No. 45, Ward Place',
+            line2: 'Colombo 07'
         }
     },
     {
         _id: 'doc2',
-        name: 'Dr. Emily Larson',
+        name: 'Dr. Chamari Wickramasinghe',
         image: doc2,
         speciality: 'Gynecologist',
-        degree: 'MBBS',
-        experience: '3 Years',
-        about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 60,
+        degree: 'MBBS (Peradeniya), MS (Obs & Gyn)',
+        experience: '12 Years',
+        about: 'Dr. Chamari Wickramasinghe is a dedicated consultant obstetrician and gynecologist specializing in women’s wellness, maternal care, and minimally invasive surgery.',
+        fees: 4500,
         address: {
-            line1: '27th Cross, Richmond',
-            line2: 'Circle, Ring Road, London'
+            line1: 'No. 120, Peradeniya Road',
+            line2: 'Kandy'
         }
     },
     {
         _id: 'doc3',
-        name: 'Dr. Sarah Patel',
+        name: 'Dr. Dilani Senanayake',
         image: doc3,
         speciality: 'Dermatologist',
-        degree: 'MBBS',
-        experience: '1 Years',
-        about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 30,
+        degree: 'MBBS (Sri Jayewardenepura), MD (Dermatology)',
+        experience: '7 Years',
+        about: 'Dr. Dilani Senanayake specializes in clinical and cosmetic dermatology, providing modern treatments for skin, hair, and pediatric dermatological conditions.',
+        fees: 3500,
         address: {
-            line1: '37th Cross, Richmond',
-            line2: 'Circle, Ring Road, London'
+            line1: 'No. 88, Havelock Road',
+            line2: 'Colombo 05'
         }
     },
     {
         _id: 'doc4',
-        name: 'Dr. Christopher Lee',
+        name: 'Dr. Nuwan Jayawardena',
         image: doc4,
         speciality: 'Pediatricians',
-        degree: 'MBBS',
-        experience: '2 Years',
-        about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 40,
+        degree: 'MBBS (Kelaniya), DCH, MD (Paediatrics)',
+        experience: '10 Years',
+        about: 'Dr. Nuwan Jayawardena is an experienced consultant pediatrician focused on child health development, immunizations, and pediatric outpatient care.',
+        fees: 3000,
         address: {
-            line1: '47th Cross, Richmond',
-            line2: 'Circle, Ring Road, London'
+            line1: 'No. 14, Kandy Road',
+            line2: 'Malabe, Colombo'
         }
     },
     {
         _id: 'doc5',
-        name: 'Dr. Jennifer Garcia',
+        name: 'Dr. Rohan Jayasuriya',
         image: doc5,
         speciality: 'Neurologist',
-        degree: 'MBBS',
-        experience: '4 Years',
-        about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 50,
+        degree: 'MBBS (Colombo), MD (Neurology), MRCP (UK)',
+        experience: '15 Years',
+        about: 'Dr. Rohan Jayasuriya is a senior consultant neurologist offering expert clinical management for headache, epilepsy, stroke rehabilitation, and movement disorders.',
+        fees: 5000,
         address: {
-            line1: '57th Cross, Richmond',
-            line2: 'Circle, Ring Road, London'
+            line1: 'No. 210, Baseline Road',
+            line2: 'Colombo 08'
         }
     },
     {
         _id: 'doc6',
-        name: 'Dr. Andrew Williams',
+        name: 'Dr. Anusha Fernando',
         image: doc6,
-        speciality: 'Neurologist',
-        degree: 'MBBS',
-        experience: '4 Years',
-        about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 50,
+        speciality: 'Gastroenterologist',
+        degree: 'MBBS (Ruhuna), MD (Gastroenterology)',
+        experience: '9 Years',
+        about: 'Dr. Anusha Fernando is a consultant gastroenterologist specializing in digestive tract care, therapeutic endoscopy, and hepatic wellness.',
+        fees: 4000,
         address: {
-            line1: '57th Cross, Richmond',
-            line2: 'Circle, Ring Road, London'
+            line1: 'No. 32, Hospital Road',
+            line2: 'Galle'
         }
     },
     {
         _id: 'doc7',
-        name: 'Dr. Christopher Davis',
+        name: 'Dr. Thisara Gunaratne',
         image: doc7,
         speciality: 'General physician',
-        degree: 'MBBS',
-        experience: '4 Years',
-        about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 50,
+        degree: 'MBBS (Colombo), MCGP (SL)',
+        experience: '6 Years',
+        about: 'Dr. Thisara Gunaratne delivers dedicated family medicine, routine wellness checkups, and early diagnostics for chronic metabolic diseases.',
+        fees: 2500,
         address: {
-            line1: '17th Cross, Richmond',
-            line2: 'Circle, Ring Road, London'
+            line1: 'No. 76, Main Street',
+            line2: 'Negombo'
         }
     },
     {
         _id: 'doc8',
-        name: 'Dr. Timothy White',
+        name: 'Dr. Menaka Samaraweera',
         image: doc8,
         speciality: 'Gynecologist',
-        degree: 'MBBS',
-        experience: '3 Years',
-        about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 60,
+        degree: 'MBBS (Peradeniya), MRCOG (UK)',
+        experience: '11 Years',
+        about: 'Dr. Menaka Samaraweera is an experienced obstetrician and gynecologist with deep focus on prenatal health, reproductive endocrinology, and fertility.',
+        fees: 4500,
         address: {
-            line1: '27th Cross, Richmond',
-            line2: 'Circle, Ring Road, London'
+            line1: 'No. 55, Kurunegala Road',
+            line2: 'Katugastota, Kandy'
         }
     },
     {
         _id: 'doc9',
-        name: 'Dr. Ava Mitchell',
+        name: 'Dr. Sachini Alwis',
         image: doc9,
         speciality: 'Dermatologist',
-        degree: 'MBBS',
-        experience: '1 Years',
-        about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 30,
+        degree: 'MBBS (Colombo), Dip. Dermatology',
+        experience: '5 Years',
+        about: 'Dr. Sachini Alwis offers patient-centered dermatological care, focusing on allergies, laser skin therapies, and cosmetic dermatology.',
+        fees: 3200,
         address: {
-            line1: '37th Cross, Richmond',
-            line2: 'Circle, Ring Road, London'
+            line1: 'No. 112, Galle Road',
+            line2: 'Mount Lavinia'
         }
     },
     {
         _id: 'doc10',
-        name: 'Dr. Jeffrey King',
+        name: 'Dr. Kusal Mendis',
         image: doc10,
         speciality: 'Pediatricians',
-        degree: 'MBBS',
-        experience: '2 Years',
-        about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 40,
+        degree: 'MBBS (Ruhuna), MD (Paediatrics)',
+        experience: '8 Years',
+        about: 'Dr. Kusal Mendis provides compassionate pediatric healthcare, allergy evaluations, asthma management, and nutritional support for infants and children.',
+        fees: 3000,
         address: {
-            line1: '47th Cross, Richmond',
-            line2: 'Circle, Ring Road, London'
+            line1: 'No. 68, Wakwella Road',
+            line2: 'Galle'
         }
     },
     {
         _id: 'doc11',
-        name: 'Dr. Zoe Kelly',
+        name: 'Dr. Priyantha Dissanayake',
         image: doc11,
         speciality: 'Neurologist',
-        degree: 'MBBS',
-        experience: '4 Years',
-        about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 50,
+        degree: 'MBBS (Peradeniya), MD, FRCP (London)',
+        experience: '18 Years',
+        about: 'Dr. Priyantha Dissanayake is a leading neurologist delivering expert diagnostic consultations for neurological disorders across Sri Lanka.',
+        fees: 5500,
         address: {
-            line1: '57th Cross, Richmond',
-            line2: 'Circle, Ring Road, London'
+            line1: 'No. 95, William Gopallawa Mawatha',
+            line2: 'Kandy'
         }
     },
     {
         _id: 'doc12',
-        name: 'Dr. Patrick Harris',
+        name: 'Dr. Asanka Weerakkody',
         image: doc12,
-        speciality: 'Neurologist',
-        degree: 'MBBS',
-        experience: '4 Years',
-        about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 50,
+        speciality: 'Gastroenterologist',
+        degree: 'MBBS (Sri Jayewardenepura), MD, MRCP',
+        experience: '10 Years',
+        about: 'Dr. Asanka Weerakkody specializes in diagnostic gastroenterology, inflammatory bowel disease management, and endoscopic procedures.',
+        fees: 4200,
         address: {
-            line1: '57th Cross, Richmond',
-            line2: 'Circle, Ring Road, London'
+            line1: 'No. 204, High Level Road',
+            line2: 'Nugegoda, Colombo'
         }
     },
     {
         _id: 'doc13',
-        name: 'Dr. Chloe Evans',
+        name: 'Dr. Tharindu Rathnayake',
         image: doc13,
         speciality: 'General physician',
-        degree: 'MBBS',
+        degree: 'MBBS (Jaffna), Dip. Family Medicine',
         experience: '4 Years',
-        about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 50,
+        about: 'Dr. Tharindu Rathnayake delivers quality general medicine, routine health screens, and personalized preventive care.',
+        fees: 2500,
         address: {
-            line1: '17th Cross, Richmond',
-            line2: 'Circle, Ring Road, London'
+            line1: 'No. 18, Colombo Road',
+            line2: 'Kurunegala'
         }
     },
     {
         _id: 'doc14',
-        name: 'Dr. Ryan Martinez',
+        name: 'Dr. Oshadi Kulatunga',
         image: doc14,
         speciality: 'Gynecologist',
-        degree: 'MBBS',
-        experience: '3 Years',
-        about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 60,
+        degree: 'MBBS (Colombo), MS (Obs & Gyn)',
+        experience: '9 Years',
+        about: 'Dr. Oshadi Kulatunga specializes in obstetric evaluations, high-risk maternity care, and advanced gynecological wellness.',
+        fees: 4000,
         address: {
-            line1: '27th Cross, Richmond',
-            line2: 'Circle, Ring Road, London'
+            line1: 'No. 72, Nawala Road',
+            line2: 'Rajagiriya, Colombo'
         }
     },
     {
         _id: 'doc15',
-        name: 'Dr. Amelia Hill',
+        name: 'Dr. Chathura Abeysekara',
         image: doc15,
-        speciality: 'Dermatologist',
-        degree: 'MBBS',
-        experience: '1 Years',
-        about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 30,
+        speciality: 'Pediatricians',
+        degree: 'MBBS (Colombo), DCH, MRCPCH (UK)',
+        experience: '13 Years',
+        about: 'Dr. Chathura Abeysekara brings over 13 years of pediatric clinical experience in pediatric intensive care and developmental pediatrics.',
+        fees: 3800,
         address: {
-            line1: '37th Cross, Richmond',
-            line2: 'Circle, Ring Road, London'
+            line1: 'No. 150, Cotta Road',
+            line2: 'Borella, Colombo 08'
         }
-    },
+    }
 ]
